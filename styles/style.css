@@ -1,0 +1,156 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #120633;
+    --cor-secundaria: #5cefff;
+    --cor-terciaria: #ee23bb; 
+    --cor-hover: #ee23bb;
+
+    --fonte-primaria: "Krona One", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*height: 100vh;*/  /*essa é a altura do viewport, isso deixa o body selecionado para toda a tela */
+    box-sizing: border-box; /* Isso evita que as propriedades filhas saiam das propriedades pais, ex: body do header*/
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color:var(--cor-secundaria);
+    
+
+}
+
+
+
+ .apresentacao {    /*chamando classe apresentaçao dentro do main */
+    padding: 5% 15%; /* define uma margem, (esquerda/direita) nesse caso o definido foi 10% */
+    display: flex;  /* O main vai ser display flex e todo mundo fica no sentido de linha*/
+    align-items: center; /* Alinha os itens para o centro da caixa do display flex */
+    justify-content: space-between; /* Justifica o conteudo, definindo o espaçamento igualitário entre eles */
+    gap: 82px; /*um espaço fixo entre a imagem e o texto */
+}
+
+.apresentacao__conteudo {
+    width: 50%; /* aumenta a largura da classe apresentacao__conteudo (tudo o que está em <section> no html */
+    display: flex; /* ativa o modo flexbox (transforma tudo em uma "prateleira" */
+    flex-direction: column; /* Organiza o conteúdo ("livros") em uma coluna empilhados*/
+    gap: 40px /* cria um espaço entre cada conteúdo ("Livro") */
+
+}
+
+.apresentacao__conteudo__titulo {
+    font-family: var(--fonte-primaria);
+    font-size: 2.25rem;
+}
+
+.destaque-titulo{
+    color:var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links {
+    display: flex; /* ativa o modo flexbox */
+    justify-content: space-between;  /* Justifica o conteúdo definindo um espaço igualitário entre eles */
+    flex-direction: column;  /* deixa a direção dos itens da flexbox no modo coluna (empilhados) */
+    align-items: center;  /* Alinha os itens da flexbox para o centro */
+    gap: 32px;  /* definiu o espaçamente de 32 pixels entre os itens */
+
+}
+
+.apresentacao__links__subtitulo {
+
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+
+}
+
+.apresentacao__links__botao {
+    /*background-color: #5cefff; */ /* adiciona cor no fundo do texto na parte do espaçamento */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%;               /* aumenta a largura */
+    text-align: center;         /* alinha o texto para o centro */
+    border-radius: 8px;         /* adiciona arredondamento de borda */
+    font-size: 1.5rem;            /* muda o tamanho da fonte */
+    font-weight: 600;           /* muda a largura da fonte */
+    padding: 21.5px 0;          /* preenchimento , baixo, cima e lados dos arredores do texto */
+    text-decoration: none;      /* tirou o sublinhado do texto */
+    color:var(--cor-secundaria);           /* adiciona cor */
+    font-family: var(--fonte-secundaria);  /* muda a tipografia */
+    border: 2px solid #5cefff; 
+}
+
+.apresentacao__links__botao:hover {
+    padding: 3%;
+    background-color: var(--cor-terciaria);
+    
+     
+}
+
+.apresentacao__conteudo__texto:hover {
+    color:var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding: 26px;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {  /* Se a largura da tela chegar em 1300px... */
+    
+    .cabecalho {
+        padding: 10%
+    }
+    
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse; /* A flexbox de apresentação (main) vai mudar para direção de coluna e reverter a imagem de baixo para cima */
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+
+
+}
