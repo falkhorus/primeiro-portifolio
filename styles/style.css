@@ -42,8 +42,6 @@ body {
 
 }
 
-
-
  .apresentacao {    /*chamando classe apresentaçao dentro do main */
     padding: 5% 15%; /* define uma margem, (esquerda/direita) nesse caso o definido foi 10% */
     display: flex;  /* O main vai ser display flex e todo mundo fica no sentido de linha*/
@@ -84,11 +82,9 @@ body {
 }
 
 .apresentacao__links__subtitulo {
-
     font-family: var(--fonte-primaria);
     font-weight: 400;
     font-size: 1.5rem;
-
 }
 
 .apresentacao__links__botao {
@@ -105,22 +101,43 @@ body {
     text-decoration: none;      /* tirou o sublinhado do texto */
     color:var(--cor-secundaria);           /* adiciona cor */
     font-family: var(--fonte-secundaria);  /* muda a tipografia */
-    border: 2px solid #5cefff; 
+    border: 2px solid #5cefff;
+    transition: 0.5s; /* tempo de transição do efeito hover */
 }
 
 .apresentacao__links__botao:hover {
     padding: 3%;
     background-color: var(--cor-terciaria);
-    
-     
+    transition: 0.5s; /* tempo de transição do efeito hover */
 }
 
 .apresentacao__conteudo__texto:hover {
     color:var(--cor-hover);
+    transition: 1s; /* tempo de transição do efeito hover no texto, mais suave e legal*/
+}
+
+.apresentacao__imagem__container {
+    position: relative;
+    display: inline-block;
 }
 
 .apresentacao__imagem {
-    width: 50%;
+    display: block;
+    width: 100%; 
+    max-width: 500px;
+    border-radius: 15px;
+    z-index: 1; 
+}
+
+.apresentacao__stroke {
+    position:  absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 8px;
+    z-index: -1; /* coloca a imagem atrás da outra */
 }
 
 .rodape {
@@ -134,11 +151,10 @@ body {
 }
 
 @media (max-width: 1200px) {  /* Se a largura da tela chegar em 1300px... */
-    
     .cabecalho {
         padding: 10%
     }
-    
+
     .cabecalho__menu {
         justify-content: center;
     }
@@ -148,9 +164,11 @@ body {
         padding: 5%;
     }
 
+    .apresentacao__links__botao {
+        padding: 5%; /* aumenta o padding para o icone nao grudar no texto% */
+    }
+
     .apresentacao__conteudo {
         width: auto;
     }
-
-
 }
